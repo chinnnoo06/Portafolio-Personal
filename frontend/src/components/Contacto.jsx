@@ -14,18 +14,22 @@ export const Contacto = () => {
   const enviarCorreo = async (e) => {
     e.preventDefault(); 
     setEnviando(true);
-    try{
-      const response = await fetch('http://localhost:5000/api/enviarcorreo', {
+    try {
+      const API_BASE = window.location.hostname === 'localhost'
+        ? 'http://localhost:5000'
+        : 'https://www.devfranciscoinda.com.mx';
+
+      const response = await fetch(`${API_BASE}/api/enviarcorreo`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
-      })
+      });
 
       const result = await response.json();
 
-      if(result.success) {
+      if (result.success) {
         setCorreoEnviado(true);
         setFormData({ nombre: '', correo: '', encabezado: '', mensaje: '' });
 
@@ -33,7 +37,6 @@ export const Contacto = () => {
           setCorreoEnviado(false);
         }, 4000);
       }
-
     } catch (error) {
       console.error('Error al enviar:', error);
     } finally {

@@ -8,7 +8,11 @@ export const Inicio = () => {
   
   const descargarCV = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/descargarcv', {
+      const API_BASE = window.location.hostname === 'localhost'
+        ? 'http://localhost:5000'
+        : 'https://www.devfranciscoinda.com.mx';
+
+      const response = await fetch(`${API_BASE}/api/descargarcv`, {
         method: 'GET',
       });
 
