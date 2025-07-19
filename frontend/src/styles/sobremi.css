@@ -1,0 +1,76 @@
+/* Animaciones de entrada */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos con transición */
+.titulo-seccion{
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.contenedor-dato,
+.tecnologia {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedor-dato:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contenedor-dato:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contenedor-dato:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contenedor-dato:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.tecnologia {
+  animation: popIn 0.4s ease forwards;
+}
+
+/* Hover effects */
+.contenedor-dato:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 8px 15px rgba(176, 58, 58, 0.5); 
+}
+
+.tecnologia:hover {
+  transform: scale(1.05); 
+}
+
+/* Icon background */
+.icon-bg {
+  background-color: rgba(176, 58, 58, 0.2); 
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 1000px) {
+  .contenedor-sobremi {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7rem !important;
+    padding-bottom: 2rem!important;
+  }
+}
