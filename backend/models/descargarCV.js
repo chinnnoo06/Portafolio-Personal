@@ -6,7 +6,8 @@ function descargarCV(res) {
   res.download(filePath, 'CV.pdf', (err) => {
     if (err) {
       console.error('Error al descargar CV:', err);
-      res.status(500).json({ success: false, message: 'Error al descargar el CV.' });
+      // No intentes enviar respuesta aquí porque ya fue enviada o está en proceso.
+      // Solo loguea el error.
     }
   });
 }
