@@ -73,10 +73,10 @@ export const Inicio = () => {
 
         {/* ICONOS SOCIALES */}
         <div className='redes-sociales flex gap-4 pt-4 text-lg sm:text-xl md:text-2xl'>
-          <a href='#' className='hover:text-[#b03a3a]'><i className='fab fa-linkedin'></i></a>
-          <a href='#' className='hover:text-[#b03a3a]'><i className='fab fa-github'></i></a>
-          <a href='#' className='hover:text-[#b03a3a]'><i className='fab fa-whatsapp'></i></a>
-          <a href='#' className='hover:text-[#b03a3a]'><i className='fas fa-envelope'></i></a>
+            <a href='https://www.linkedin.com/in/francisco-gabriel-inda-lomeli-3ab9b0323' target='_blank' rel='noopener noreferrer' className='hover:text-[#b03a3a]'><i className='fab fa-linkedin'></i></a>
+            <a href='https://github.com/chinnnoo06' target='_blank' rel='noopener noreferrer' className='hover:text-[#b03a3a]'><i className='fab fa-github'></i></a>
+            <a href='https://wa.me/523318237277?text=Hola%20Francisco%2C%20quiero%20más%20información.' target='_blank' rel='noopener noreferrer' className='hover:text-[#b03a3a]'><i className='fab fa-whatsapp'></i></a>
+            <a href='mailto:franciscoinda@codemx.net' target='_blank' rel='noopener noreferrer' className='hover:text-[#b03a3a]'><i className='fas fa-envelope'></i></a>
         </div>
       </div>
 

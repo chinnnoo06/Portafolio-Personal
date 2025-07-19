@@ -173,17 +173,17 @@ export const Header = () => {
         
         {/* Redes sociales en menú móvil */}
         <div className="mt-auto p-4 flex justify-center gap-6 border-t border-[#3d3d3d]">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
+          <a href="https://www.linkedin.com/in/francisco-gabriel-inda-lomeli-3ab9b0323" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
             <i className="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
-            <i className="fab fa-github"></i>
+          <a href="https://github.com/chinnnoo06" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
+             <i className="fab fa-github"></i>
+          </a>
+          <a href="https://wa.me/523318237277?text=Hola%20Francisco%2C%20quiero%20más%20información." target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
+            <i className="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:franciscoinda@codemx.net" target="_blank" rel="noopener noreferrer" className="text-[#dde1e9] hover:text-[#b03a3a] text-xl">
+            <i className="fas fa-envelope"></i>
           </a>
         </div>
       </div>
