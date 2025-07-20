@@ -88,7 +88,7 @@ export const Proyectos = () => {
   return (
     <div 
       ref={sectionRef}
-      className={`contenedor-proyectos flex flex-col pt-20 pb-24 gap-5 mx-auto max-w-[1000px] ${
+      className={`contenedor-proyectos flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${
         isVisible ? 'animate-fadeUp' : 'opacity-0'
       }`}
     >
