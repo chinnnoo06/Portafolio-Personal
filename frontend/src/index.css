@@ -50,8 +50,10 @@
 }
 
 .contenedor-inicio,
-.contenedor-sobremi {
-  /* Tus estilos normales */
+.contenedor-sobremi,
+.contenedor-sevicios,
+.contenedor-proyectos,
+.contenedor-contacto {
   opacity: 0; /* Inicialmente invisible */
 }
 
@@ -70,5 +72,9 @@
   }
 }
 
+
+.isactive{
+  color: #b03a3a;
+}
 
 

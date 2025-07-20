@@ -4,10 +4,30 @@ export const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 } 
+    );
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,19 +63,44 @@ export const Header = () => {
 
         {/* Secciones */}
         <nav className="nav hidden md:flex gap-[2rem]">
-          <a href="#inicio" className="text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300">
+          <a
+            href="#inicio"
+            className={`text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300 ${
+              activeSection === 'inicio' ? 'isactive' : ''
+            }`}
+          >
             Inicio
           </a>
-          <a href="#sobremi" className="text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300">
+          <a
+            href="#sobremi"
+            className={`text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300 ${
+              activeSection === 'sobremi' ? 'isactive' : ''
+            }`}
+          >
             Sobre Mí
           </a>
-          <a href="#servicios" className="text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300">
+          <a
+            href="#servicios"
+            className={`text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300 ${
+              activeSection === 'servicios' ? 'isactive' : ''
+            }`}
+          >
             Servicios
           </a>
-          <a href="#proyectos" className="text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300">
+           <a
+            href="#proyectos"
+            className={`text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300 ${
+              activeSection === 'proyectos' ? 'isactive' : ''
+            }`}
+          >
             Proyectos
           </a>
-          <a href="#contacto" className="text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300">
+          <a
+            href="#contacto"
+            className={`text-[#dde1e9] font-semibold hover:text-[#b03a3a] transition-all duration-300 ${
+              activeSection === 'contacto' ? 'isactive' : ''
+            }`}
+          >
             Contacto
           </a>
         </nav>
@@ -98,19 +143,39 @@ export const Header = () => {
           </button>
         </div>
         <nav className="flex flex-col p-4 gap-4">
-          <a href="#inicio" className="text-[#dde1e9] hover:text-[#b03a3a]" onClick={toggleMenu}>
+          <a
+            href="#inicio"
+            className={`text-[#dde1e9] hover:text-[#b03a3a] ${activeSection === 'inicio' ? 'isactive' : ''}`}
+            onClick={toggleMenu}
+          >
             Inicio
           </a>
-          <a href="#sobremi" className="text-[#dde1e9] hover:text-[#b03a3a]" onClick={toggleMenu}>
+          <a
+            href="#sobremi"
+            className={`text-[#dde1e9] hover:text-[#b03a3a] ${activeSection === 'sobremi' ? 'isactive' : ''}`}
+            onClick={toggleMenu}
+          >
             Sobre Mí
           </a>
-          <a href="#servicios" className="text-[#dde1e9] hover:text-[#b03a3a]" onClick={toggleMenu}>
+          <a
+            href="#servicios"
+            className={`text-[#dde1e9] hover:text-[#b03a3a] ${activeSection === 'servicios' ? 'isactive' : ''}`}
+            onClick={toggleMenu}
+          >
             Servicios
           </a>
-          <a href="#proyectos" className="text-[#dde1e9] hover:text-[#b03a3a]" onClick={toggleMenu}>
+          <a
+            href="#proyectos"
+            className={`text-[#dde1e9] hover:text-[#b03a3a] ${activeSection === 'proyectos' ? 'isactive' : ''}`}
+            onClick={toggleMenu}
+          >
             Proyectos
           </a>
-          <a href="#contacto" className="text-[#dde1e9] hover:text-[#b03a3a]" onClick={toggleMenu}>
+          <a
+            href="#contacto"
+            className={`text-[#dde1e9] hover:text-[#b03a3a] ${activeSection === 'contacto' ? 'isactive' : ''}`}
+            onClick={toggleMenu}
+          >
             Contacto
           </a>
         </nav>

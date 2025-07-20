@@ -25,11 +25,11 @@ export const MisRutas = () => {
           <Servicios />
         </section>
 
-        <section id="proyectos" className='fondo-oscuro'>
+        <section id="proyectos" className='fondo-oscuro min-h-screen'>
           <Proyectos />
         </section>
 
-        <section id="contacto">
+         <section id="contacto">
           <Contacto />
         </section>
       </main>
