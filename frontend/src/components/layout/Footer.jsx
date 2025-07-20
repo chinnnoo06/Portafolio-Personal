@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -8,11 +7,11 @@ export const Footer = () => {
         
         {/* Logo y derechos */}
         <div className="logo flex flex-col items-center md:items-start gap-2" translate="no">
-          <Link to="/">
+          <a href="/">
             <h2 className="text-2xl text-[#dde1e9] font-bold tracking-wide">
               FRANCISCO <span className="text-[#b03a3a]">INDA</span>
             </h2>
-          </Link>
+          </a>
           <p className="text-[#dde1e9] text-base">
             &copy; {new Date().getFullYear()} Todos los derechos reservados
           </p>
@@ -22,21 +21,21 @@ export const Footer = () => {
         <div className="flex flex-col items-center md:items-start gap-3">
           <h3 className="text-[#b03a3a] font-semibold uppercase text-lg">Enlaces Rápidos</h3>
           <div className="flex flex-col gap-2">
-            <Link to="/inicio" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
+            <a href="#inicio" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
               Inicio
-            </Link>
-            <Link to="/sobremi" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
+            </a>
+            <a href="#sobremi" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
               Sobre Mí
-            </Link>
-            <Link to="/servicios" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
+            </a>
+            <a href="#servicios" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
               Servicios
-            </Link>
-            <Link to="/proyectos" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
+            </a>
+            <a href="#proyectos" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
               Proyectos
-            </Link>
-            <Link to="/contacto" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
+            </a>
+            <a href="#contacto" className="text-[#dde1e9] hover:text-[#b03a3a] transition duration-300 text-base">
               Contacto
-            </Link>
+            </a>
           </div>
         </div>
 

@@ -2,42 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.content {
-  background-color: #d7d6d6;
+.fondo-oscuro {
+  background: 
+    linear-gradient(135deg, #272727 0%, #1a1a1a 50%, #272727 100%),
+    radial-gradient(circle at 20% 30%, rgba(221, 225, 233, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(176, 58, 58, 0.12) 0%, transparent 30%);
+  background-size: 400% 400%;
+  animation: gradientFlow 18s ease infinite;
 }
 
-.menu-lateral{
-  display: none;
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-
-/* Responsive para móviles */
-@media (max-width: 1000px) {
-    .contenedor-header .nav,
-    .contenedor-header .redes-sociales {
-        display: none !important;
-    }
-    .nav-responsive{
-        display: flex !important;
-    }
-    .menu-lateral{
-      display: flex;
-    }
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* Efecto de cursor futurista */
 .cursor-trail {
   position: fixed;
-  width: 4px;
-  height: 4px;
-  background-color: #b03a3a;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(236, 72, 72, 0.7);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 50;
+  z-index: 9999;
   transform: translate(-50%, -50%);
-  filter: blur(6px);
-  opacity: 0.9;
-  animation: dustFade 0.6s ease-out forwards;
+  filter: blur(1px);
+  mix-blend-mode: screen;
+  animation: dustFade 0.8s ease-out forwards;
 }
 
 @keyframes dustFade {
@@ -47,6 +45,30 @@
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(3);
   }
 }
+
+.contenedor-inicio,
+.contenedor-sobremi {
+  /* Tus estilos normales */
+  opacity: 0; /* Inicialmente invisible */
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

@@ -1,5 +1,5 @@
 // pages/Proyectos.jsx
-import React from 'react'
+import React, { useRef } from 'react';
 import { ProyectoCard } from '../components/ProyectoCard'
 import '../styles/proyectos.css'
 import codemx from '../assets/Codemx.jpg'
@@ -7,16 +7,22 @@ import sneakerspulse from '../assets/SneakersPulse.jpg'
 import cpsoporte from '../assets/CPSoporte.jpg'
 import portafolio from '../assets/Portafolio.jpg'
 import reproductor from '../assets/Reproductor.jpg'
-
 import {
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs,
-  FaPhp, FaJava, FaDatabase, FaMicrosoft
+  FaReact, FaBootstrap, FaNodeJs,
+  FaPhp, FaJava, FaMicrosoft
 } from 'react-icons/fa'
 import {
   SiTailwindcss, SiAngular, SiExpress, SiMysql, SiSqlite
 } from 'react-icons/si'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const Proyectos = () => {
+  const sectionRef = useRef(null);
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
   const proyectos = [
     {
       img: codemx,
@@ -71,7 +77,7 @@ export const Proyectos = () => {
       img: reproductor,
       alt: 'Proyecto Reproductor',
       titulo: 'Reproductor de Música',
-      descripcion: 'Aplicación móvil desarrollada en Java que permite reproducir archivos de audio almacenados localmente. Ofrece una interfaz intuitiva para gestionar listas de reproducción, controlar la reproducción (pausar, reanudar, adelantar, retroceder), y almacenar información del usuario y sus canciones favoritas mediante MySQL.',
+      descripcion: 'App móvil desarrollada en Java que permite reproducir archivos de audio almacenados localmente. Ofrece una interfaz intuitiva para gestionar listas de reproducción, controlar la reproducción y almacenar información del usuario y sus canciones favoritas mediante MySQL.',
       tecnologias: [
         { icon: <FaJava className='text-sm sm:text-base md:text-lg text-[#007396]' />, label: 'Java' },
         { icon: <SiMysql className='text-sm sm:text-base md:text-lg text-[#00758f]' />, label: 'MySQL' },
@@ -80,13 +86,18 @@ export const Proyectos = () => {
   ]
 
   return (
-    <div className='contenedor-proyectos flex flex-col pt-36 pb-24 gap-5 mx-auto max-w-[1000px] px-4'>
-      <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block'>
+    <div 
+      ref={sectionRef}
+      className={`contenedor-proyectos flex flex-col pt-20 pb-24 gap-5 mx-auto max-w-[1000px] ${
+        isVisible ? 'animate-fadeUp' : 'opacity-0'
+      }`}
+    >
+      <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block text-[#dde1e9]'>
         Portafolio de Proyectos
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
       </h1>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         {proyectos.map((proyecto, index) => (
           <ProyectoCard key={index} {...proyecto} />
         ))}

@@ -13,7 +13,7 @@ export const ProyectoCard = ({ img, alt, titulo, descripcion, tecnologias }) => 
         {titulo}
       </h3>
 
-      <div className='contenedor-texto h-28'>
+      <div className='contenedor-texto h-32'>
         <span className="text-[#dde1e9] text-[13px] lg:text-[14px] font-extralight block pt-2">
           {descripcion}
         </span>

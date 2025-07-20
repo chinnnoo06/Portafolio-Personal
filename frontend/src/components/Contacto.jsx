@@ -1,7 +1,14 @@
-import React, { use, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../styles/contacto.css'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const Contacto = () => {
+  const sectionRef = useRef(null);
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
   const [correoEnviado, setCorreoEnviado] = useState(false);
   const [enviando, setEnviando] = useState(false);
   const [formData, setFormData] = useState({
@@ -64,7 +71,12 @@ export const Contacto = () => {
 
 
   return (
-    <div className='contenedor-contacto flex flex-col pt-36 pb-24 gap-5 mx-auto max-w-[1000px] px-4'>
+    <div 
+      ref={sectionRef}
+      className={`contenedor-contacto flex flex-col pt-20 pb-24 gap-5 mx-auto max-w-[1000px] ${
+        isVisible ? 'animate-fadeUp' : 'opacity-0'
+      }`}
+    >
       <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block'>
         Trabajemos Juntos
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
@@ -99,7 +111,7 @@ export const Contacto = () => {
         </div>
         <div className='col2 flex flex-col w-full md:w-1/2'>
           {correoEnviado ? (
-            <div className='p-6 bg-[#1e1e1e] rounded-2xl shadow-lg border border-[#383838] h-[29rem] flex flex-col justify-center items-center animate-fade-in'>
+            <div className='p-6 bg-[#1e1e1e] rounded-2xl shadow-lg border border-[#383838] h-[27rem] sm:h-[27.8rem md:h-[30rem] flex flex-col justify-center items-center animate-fade-in'>
               <div className="text-[#b03a3a] text-6xl animate-bounce">
                 <i className="fas fa-check-circle"></i>
               </div>
@@ -108,16 +120,27 @@ export const Contacto = () => {
               </p>
             </div>
           ) : (
-            <form className="p-4 bg-[#1e1e1e] rounded-2xl shadow-lg space-y-5 border border-[#383838] h-[29rem]" onSubmit={enviarCorreo}>
+            <form
+              className="p-4 bg-[#1e1e1e] rounded-2xl shadow-lg space-y-5 border border-[#383838]
+                        h-[26rem] sm:h-[28rem] md:h-[30rem] lg:h-[32rem]"
+              onSubmit={enviarCorreo}
+            >
               <div>
-                <label htmlFor="nombre" className="block text-sm font-semibold text-[#dde1e9] mb-1">
+                <label
+                  htmlFor="nombre"
+                  className="block font-semibold text-[#dde1e9] mb-1
+                            text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                >
                   Nombre
                 </label>
                 <input
                   type="text"
                   id="nombre"
                   name="nombre"
-                  className="w-full px-2 py-2 rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition text-sm"
+                  className="w-full px-2 py-[6px] sm:py-2 md:py-[10px] lg:py-[12px]
+                            rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400
+                            focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition
+                            text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px]"
                   placeholder="Escribe tu nombre"
                   value={formData.nombre}
                   onChange={manejarValorInput}
@@ -125,14 +148,21 @@ export const Contacto = () => {
               </div>
 
               <div>
-                <label htmlFor="correo" className="block text-sm font-semibold text-[#dde1e9] mb-1">
-                  Correo Electronico
+                <label
+                  htmlFor="correo"
+                  className="block font-semibold text-[#dde1e9] mb-1
+                            text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                >
+                  Correo Electrónico
                 </label>
                 <input
                   type="email"
                   id="correo"
                   name="correo"
-                  className="w-full px-2 py-2 rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition text-sm"
+                  className="w-full px-2 py-[6px] sm:py-2 md:py-[10px] lg:py-[12px]
+                            rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400
+                            focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition
+                            text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px]"
                   placeholder="Escribe tu correo"
                   value={formData.correo}
                   onChange={manejarValorInput}
@@ -140,14 +170,21 @@ export const Contacto = () => {
               </div>
 
               <div>
-                <label htmlFor="encabezado" className="block text-sm font-semibold text-[#dde1e9] mb-1">
+                <label
+                  htmlFor="encabezado"
+                  className="block font-semibold text-[#dde1e9] mb-1
+                            text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                >
                   Encabezado de correo
                 </label>
                 <input
                   type="text"
                   id="encabezado"
                   name="encabezado"
-                  className="w-full px-2 py-2 rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition text-sm"
+                  className="w-full px-2 py-[6px] sm:py-2 md:py-[10px] lg:py-[12px]
+                            rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400
+                            focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition
+                            text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px]"
                   placeholder="Escribe el encabezado del correo"
                   value={formData.encabezado}
                   onChange={manejarValorInput}
@@ -155,14 +192,21 @@ export const Contacto = () => {
               </div>
 
               <div>
-                <label htmlFor="mensaje" className="block text-sm font-semibold text-[#dde1e9] mb-1">
+                <label
+                  htmlFor="mensaje"
+                  className="block font-semibold text-[#dde1e9] mb-1
+                            text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]"
+                >
                   Mensaje
                 </label>
                 <textarea
                   id="mensaje"
                   name="mensaje"
                   rows="4"
-                  className="w-full px-2 py-2 rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition text-sm"
+                  className="w-full px-2 py-[6px] sm:py-2 md:py-[10px] lg:py-[12px]
+                            rounded-lg bg-[#2b2b2b] text-[#dde1e9] border border-[#444] placeholder-gray-400
+                            resize-none focus:outline-none focus:ring-2 focus:ring-[#b03a3a] focus:border-[#b03a3a] transition
+                            text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px]"
                   placeholder="Escribe el mensaje"
                   value={formData.mensaje}
                   onChange={manejarValorInput}
@@ -171,15 +215,19 @@ export const Contacto = () => {
 
               <div className="flex justify-center">
                 <button
-                  className={`px-6 py-2 rounded-lg font-semibold transition duration-300 
-                    ${esFormularioValido()
-                      ? 'bg-[#b03a3a] text-[#dde1e9] hover:bg-[#932f2f]'
-                      : 'bg-gray-500 text-[#dde1e9] cursor-not-allowed'}
-                  `}
-                  type='submit'
+                  className={`px-3 sm:px-4 md:px-5 lg:px-6
+                              py-[6px] sm:py-[7px] md:py-[8px] lg:py-[9px]
+                              rounded-lg font-semibold transition duration-300
+                              text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]
+                              ${
+                                esFormularioValido()
+                                  ? 'bg-[#b03a3a] text-[#dde1e9] hover:bg-[#932f2f]'
+                                  : 'bg-gray-500 text-[#dde1e9] cursor-not-allowed'
+                              }`}
+                  type="submit"
                   disabled={!esFormularioValido() || enviando}
                 >
-                   {enviando ? 'Enviando...' : 'Enviar Correo'}
+                  {enviando ? 'Enviando...' : 'Enviar Correo'}
                 </button>
               </div>
             </form>

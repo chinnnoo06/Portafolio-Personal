@@ -1,16 +1,22 @@
-// pages/Servicios.jsx
-import React from 'react'
+import React, { useRef } from 'react';
 import { ServicioCard } from '../components/ServicioCard'
 import '../styles/servicios.css'
 import {
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs,
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaBootstrap, FaNodeJs,
   FaPhp, FaJava, FaMicrosoft
 } from 'react-icons/fa'
 import {
   SiTailwindcss, SiAngular, SiExpress, SiMysql, SiFirebase, SiFigma, SiC, SiCplusplus, SiSqlite
 } from 'react-icons/si'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const Servicios = () => {
+  const sectionRef = useRef(null);
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1,
+    triggerOnce: true
+  });
+
   const servicios = [
     {
       titulo: 'Diseño UI/UX',
@@ -65,13 +71,18 @@ export const Servicios = () => {
   ]
 
   return (
-    <div className='contenedor-servicios flex flex-col pt-36 pb-24 gap-5 mx-auto max-w-[1000px] px-4'>
+    <div  ref={sectionRef}
+          className={`contenedor-servicios flex flex-col pt-20 pb-24 gap-5 mx-auto max-w-[1000px] ${
+          isVisible ? 'animate-fadeUp' : 'opacity-0'
+           }`}
+    >
+    
       <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block'>
         Servicios
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
       </h1>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         {servicios.map((servicio, index) => (
           <ServicioCard key={index} {...servicio} />
         ))}

@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useRef } from 'react';
 import '../styles/sobremi.css'
 import { 
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs, FaPhp, FaJava, FaDatabase, FaMicrosoft
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs, FaPhp, FaJava, FaMicrosoft
 } from 'react-icons/fa';
 import { SiTailwindcss, SiAngular, SiExpress, SiC, SiCplusplus, SiMysql, SiFirebase, SiFigma, SiSqlite } from 'react-icons/si';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const SobreMi = () => {
+  const sectionRef = useRef(null);
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1,
+    triggerOnce: true
+  });
+  
   return (
-    <div className='contenedor-sobremi flex flex-col pt-36 pb-24 gap-5 mx-auto max-w-[1000px]'>
-
+    <div ref={sectionRef} 
+        className={`contenedor-inicio flex flex-col pt-20 pb-24 gap-5 mx-auto max-w-[1000px] ${
+          isVisible ? 'animate-fadeUp' : 'opacity-0'
+        }`}>
+          
       {/* Título */}
-      <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block'>
+      <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block text-[#dde1e9]'>
         Sobre Mí
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
       </h1>
 
       {/* Sección: ¿Quién soy?, Mi perfil, Mi objetivo */}
-      <div className='fil1 flex flex-col lg:flex-row justify-between items-stretch gap-5'>
+      <div className='fil1 flex flex-col lg:flex-row justify-between items-stretch gap-6'>
 
         {/* ¿Quién soy? */}
         <div className='contenedor-dato flex-1 flex flex-col bg-[#272727] border-t-4 border-[#b03a3a] shadow-md p-4 h-52 rounded'>

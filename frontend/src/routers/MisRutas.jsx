@@ -1,5 +1,4 @@
-import React from 'react'
-import { Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
+import React from 'react';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { Servicios } from '../components/Servicios';
@@ -10,25 +9,32 @@ import { SobreMi } from '../components/SobreMi';
 
 export const MisRutas = () => {
   return (
-    <BrowserRouter>
-        {/*HEADER Y NAVGEACION */}
-        <Header/>
+    <>
+      <Header />
 
-        {/*CONTENIDO CENTRAL */ }
-        <section className='content'>
-          <Routes>
-              <Route path='/' element={<Navigate to="/inicio" />} />
-              <Route path='/inicio' element={<Inicio/>} />
-              <Route path='/sobremi' element={<SobreMi/>} />
-              <Route path='/servicios' element={<Servicios/>} />
-              <Route path='/proyectos' element={<Proyectos/>} />
-              <Route path='/contacto' element={<Contacto/>} />
-          </Routes>
+      <main className='content'>
+        <section id="inicio">
+          <Inicio />
         </section>
 
+        <section id="sobremi" className='fondo-oscuro'>
+          <SobreMi />
+        </section>
 
-        {/*FOOTER*/ }
-        <Footer/>
-    </BrowserRouter>
-  )
-}
+        <section id="servicios">
+          <Servicios />
+        </section>
+
+        <section id="proyectos" className='fondo-oscuro'>
+          <Proyectos />
+        </section>
+
+        <section id="contacto">
+          <Contacto />
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+};

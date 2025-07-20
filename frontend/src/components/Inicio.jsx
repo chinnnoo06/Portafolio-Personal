@@ -1,10 +1,15 @@
-import React, { use, useState } from 'react';
+import React, { useRef } from 'react';
 import '../styles/inicio.css'
 import imagen from '../assets/img1.jpg'
-import { Link } from 'react-router-dom';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+
 
 export const Inicio = () => {
-
+  const sectionRef = useRef(null);
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1,
+    triggerOnce: true
+  });
   
   const descargarCV = async () => {
     try {
@@ -36,8 +41,12 @@ export const Inicio = () => {
 
 
   return (
-    <div className='contenedor-inicio flex justify-center items-center pt-44 pb-28 gap-10 mx-auto max-w-[1000px]'>
-      
+    <div ref={sectionRef}
+      className={`contenedor-inicio flex justify-center items-center pt-44 pb-28 gap-10 mx-auto max-w-[1000px] ${
+        isVisible ? 'animate-fadeUp' : 'opacity-0'
+      }`}
+      >
+
       {/* TEXTO A LA IZQUIERDA */}
       <div className='col1 flex flex-col'>
         <div className='contenedor-texto'>
@@ -67,12 +76,12 @@ export const Inicio = () => {
             Descargar CV
           </button>
 
-          <Link
-              to="/contacto"
-              className='px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm md:px-5 md:py-2 md:text-base border border-[#b03a3a] text-[#b03a3a] rounded hover:bg-[#b03a3a] hover:text-white transition'
-            >
-              Contactar
-            </Link>
+          <a
+            href="#contacto"
+            className="px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm md:px-5 md:py-2 md:text-base border border-[#b03a3a] text-[#b03a3a] rounded hover:bg-[#b03a3a] hover:text-white transition"
+          >
+            Contactar
+          </a>
         </div>
 
         {/* ICONOS SOCIALES */}
