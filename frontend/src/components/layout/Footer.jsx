@@ -57,7 +57,7 @@ export const Footer = () => {
             </a>
           </div>
           <p className="text-[#dde1e9] text-base mt-2 hidden md:block">
-            franciscoinda@codemx.net
+            inda5054@gmail.com
           </p>
         </div>
 
