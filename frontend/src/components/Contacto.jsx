@@ -97,7 +97,7 @@ export const Contacto = () => {
           </p>
 
           <div className=''>
-            <p className='text-sm mb-1'><span className='font-semibold text-[#b03a3a]'>Ubicación:</span> Guadalajara, México</p>
+            <p className='text-sm mb-1'><span className='font-semibold text-[#b03a3a]'>Ubicación:</span> Zapopan, Jalisco</p>
             <p className='text-sm mb-1'><span className='font-semibold text-[#b03a3a]'>Modalidad:</span> Remoto, híbrido o presencial (dependiendo del proyecto)</p>
             <p className='text-sm'><span className='font-semibold text-[#b03a3a]'>Colaboraciones:</span> Freelance, contratos por proyecto, asociaciones tecnológicas</p>
           </div>
