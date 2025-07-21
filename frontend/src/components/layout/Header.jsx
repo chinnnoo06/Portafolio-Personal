@@ -12,6 +12,9 @@ export const Header = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
+    const isSmallScreen = window.innerWidth < 640; // < 640px (tailwind sm breakpoint)
+    const thresholdValue = isSmallScreen ? 0.05 : 0.4;
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -20,7 +23,7 @@ export const Header = () => {
           }
         });
       },
-      { threshold: 0.4 } 
+      { threshold: thresholdValue }
     );
 
     sections.forEach(section => observer.observe(section));
@@ -28,9 +31,10 @@ export const Header = () => {
     return () => observer.disconnect();
   }, []);
 
-
   useEffect(() => {
     const handleScroll = () => {
+      if (menuVisible) return;
+
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -44,7 +48,8 @@ export const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, menuVisible]);
+
 
   return (
     <div className={`contenedor-header bg-[#272727] fixed top-0 left-0 w-full z-[9999] transition-transform duration-300 ${
