@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .fondo-oscuro {
   background: 
     linear-gradient(135deg, #272727 0%, #1a1a1a 50%, #272727 100%),
