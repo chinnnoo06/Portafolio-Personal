@@ -20,7 +20,7 @@ export const Header = () => {
           }
         });
       },
-      { threshold: 0.5 } 
+      { threshold: 0.4 } 
     );
 
     sections.forEach(section => observer.observe(section));
