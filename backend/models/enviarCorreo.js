@@ -7,7 +7,6 @@ async function enviarEmail (nombre, correo, encabezado, mensaje, callback) {
     console.log('mensaje', mensaje);
 
     try {
-        // Configurar el transporte (en este caso con Gmail)
         const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -18,8 +17,8 @@ async function enviarEmail (nombre, correo, encabezado, mensaje, callback) {
 
         // Contenido del correo
         const mailOptions = {
-        from: 'inda5054@gmail.com',         // Tu correo autenticado
-        to: 'inda5054@gmail.com',           // Tu correo como destino
+        from: 'inda5054@gmail.com',         // correo autenticado
+        to: 'inda5054@gmail.com',           // correo como destino
         replyTo: correo,                    // Para poder responder al usuario
         subject: encabezado,
         text: `

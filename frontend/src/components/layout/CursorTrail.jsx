@@ -12,7 +12,7 @@ export const CursorTrail = () => {
       // Elimina el trail después de que se desvanece
       setTimeout(() => {
         trail.remove();
-      }, 600); // Debe coincidir con la animación
+      }, 600);
     };
 
     const handleMouseMove = (e) => {
@@ -23,5 +23,5 @@ export const CursorTrail = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  return null; // No se renderiza visualmente
+  return null; 
 };
