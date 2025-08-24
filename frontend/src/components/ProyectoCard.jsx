@@ -5,7 +5,7 @@ export const ProyectoCard = ({ img, alt, titulo, descripcion, tecnologias }) => 
     <img
         src={img}
         alt={alt}
-        className="w-full h-48 object-cover object-top rounded-t"
+        className="w-full h-64 object-cover object-top rounded-t"
     />
 
     <div className="p-4 flex flex-col">
