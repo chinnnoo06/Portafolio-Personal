@@ -42,7 +42,7 @@ export const Servicios = () => {
         { icon: <SiExpress className='text-sm sm:text-base md:text-lg text-white' />, label: 'Express.js' },
         { icon: <FaPhp className='text-sm sm:text-base md:text-lg text-[#8892be]' />, label: 'PHP' },
         { icon: <SiMysql className='text-sm sm:text-base md:text-lg text-[#00758f]' />, label: 'MySQL' },
-        { icon: <SiMongodb className='text-sm sm:text-base md:text-lg text-[#ffca28]' />, label: 'MongoDB' },
+        { icon: <SiMongodb className='text-sm sm:text-base md:text-lg text-[#47A248]' />, label: 'MongoDB' },
         { icon: <SiFirebase className='text-sm sm:text-base md:text-lg text-[#ffca28]' />, label: 'Firebase' }
       ]
     },
