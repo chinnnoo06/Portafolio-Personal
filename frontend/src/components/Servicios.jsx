@@ -6,7 +6,7 @@ import {
   FaPhp, FaJava, FaMicrosoft
 } from 'react-icons/fa'
 import {
-  SiTailwindcss, SiAngular, SiExpress, SiMysql, SiFirebase, SiFigma, SiC, SiCplusplus, SiSqlite
+  SiTailwindcss, SiAngular, SiExpress, SiMysql, SiFirebase, SiFigma, SiC, SiCplusplus, SiSqlite, SiMongodb
 } from 'react-icons/si'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
@@ -42,6 +42,7 @@ export const Servicios = () => {
         { icon: <SiExpress className='text-sm sm:text-base md:text-lg text-white' />, label: 'Express.js' },
         { icon: <FaPhp className='text-sm sm:text-base md:text-lg text-[#8892be]' />, label: 'PHP' },
         { icon: <SiMysql className='text-sm sm:text-base md:text-lg text-[#00758f]' />, label: 'MySQL' },
+        { icon: <SiMongodb className='text-sm sm:text-base md:text-lg text-[#ffca28]' />, label: 'MongoDB' },
         { icon: <SiFirebase className='text-sm sm:text-base md:text-lg text-[#ffca28]' />, label: 'Firebase' }
       ]
     },
@@ -71,12 +72,11 @@ export const Servicios = () => {
   ]
 
   return (
-    <div  ref={sectionRef}
-          className={`contenedor-servicios flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${
-          isVisible ? 'animate-fadeUp' : 'opacity-0'
-           }`}
+    <div ref={sectionRef}
+      className={`contenedor-servicios flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${isVisible ? 'animate-fadeUp' : 'opacity-0'
+        }`}
     >
-    
+
       <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block'>
         Servicios
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>

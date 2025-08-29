@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
 import '../styles/sobremi.css'
-import { 
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs, FaPhp, FaJava, FaMicrosoft
-} from 'react-icons/fa';
-import { SiTailwindcss, SiAngular, SiExpress, SiC, SiCplusplus, SiMysql, SiFirebase, SiFigma, SiSqlite } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs, FaPhp, FaJava, FaMicrosoft } from 'react-icons/fa';
+import { SiTailwindcss, SiAngular, SiExpress, SiC, SiCplusplus, SiMysql, SiFirebase, SiFigma, SiSqlite, SiMongodb } from 'react-icons/si';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const SobreMi = () => {
@@ -12,11 +10,10 @@ export const SobreMi = () => {
     threshold: 0.1,
     triggerOnce: true
   });
-  
+
   return (
-    <div ref={sectionRef} 
-        className={`contenedor-sobremi flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${
-          isVisible ? 'animate-fadeUp' : 'opacity-0'
+    <div ref={sectionRef}
+      className={`contenedor-sobremi flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${isVisible ? 'animate-fadeUp' : 'opacity-0'
         }`}>
       {/* Título */}
       <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block text-[#dde1e9]'>
@@ -33,7 +30,7 @@ export const SobreMi = () => {
             <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-circle-user text-[14px] text-[#b03a3a]"></i>
-              </span> 
+              </span>
               ¿Quién soy?
             </h3>
           </div>
@@ -52,7 +49,7 @@ export const SobreMi = () => {
             <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-address-card text-[14px] text-[#b03a3a]"></i>
-              </span> 
+              </span>
               Mi perfil
             </h3>
           </div>
@@ -70,7 +67,7 @@ export const SobreMi = () => {
             <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-rocket text-[14px] text-[#b03a3a]"></i>
-              </span> 
+              </span>
               Mi objetivo
             </h3>
           </div>
@@ -172,12 +169,17 @@ export const SobreMi = () => {
             <SiMysql className='text-2xl sm:text-3xl md:text-4xl text-[#00758f]' />
             <span className='text-xs text-[#dde1e9] mt-1'>MySQL</span>
           </div>
-          
+
           <div className='tecnologia flex flex-col items-center text-center'>
             <SiSqlite className='text-2xl sm:text-3xl md:text-4xl text-[#003b57]' />
             <span className='text-xs text-[#dde1e9] mt-1'>SQLite</span>
           </div>
-          
+
+          <div className='tecnologia flex flex-col items-center text-center'>
+            <SiMongodb className='text-2xl sm:text-3xl md:text-4xl text-[#47A248]' />
+            <span className='text-xs text-[#dde1e9] mt-1'>MongoDB</span>
+          </div>
+
           <div className='tecnologia flex flex-col items-center text-center'>
             <SiFirebase className='text-2xl sm:text-3xl md:text-4xl text-[#ffca28]' />
             <span className='text-xs text-[#dde1e9] mt-1'>Firebase</span>
