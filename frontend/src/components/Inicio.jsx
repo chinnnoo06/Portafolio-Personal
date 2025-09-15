@@ -58,7 +58,7 @@ export const Inicio = () => {
             Tecnólogo y estudiante de ingenieria en Desarrollo de Software
           </h1>
 
-          <span className='text-[11px] sm:text-[13px] md:text-[15px] lg:text-[16px] font-extralight mt-2 block'>
+          <span className='text-sm md:text-base font-light leading-relaxed mt-2 block'>
             Me apasiona transformar ideas en soluciones digitales que realmente importan. A lo largo de mi formación,
             he adquirido habilidades sólidas en desarrollo web y software, y las he puesto en práctica creando proyectos
             modernos, funcionales y centrados en la experiencia del usuario.

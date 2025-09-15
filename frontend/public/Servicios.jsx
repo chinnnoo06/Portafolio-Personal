@@ -51,7 +51,7 @@ export const Servicios = () => {
     },
     {
       titulo: 'Desarrollo Móvil',
-      descripcion: 'Creación de aplicaciones móviles nativas con Java para Android. Ideal para apps empresariales o personales.',
+      descripcion: 'Creación de aplicaciones móviles nativas con Java para Android o multiplataforma con C#. Ideal para apps empresariales o personales.',
       icono: <i className="fa-solid fa-mobile-screen-button text-[#b03a3a]"></i>,
       detalles: [
         'Apps nativas Android con Java/Kotlin',
@@ -63,7 +63,7 @@ export const Servicios = () => {
 
   return (
     <section id="servicios" ref={sectionRef}
-      className={`contenedor-servicios flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-6 mx-auto max-w-[1200px] px-4 ${isVisible ? 'animate-fadeUp' : 'opacity-0'
+      className={`contenedor-servicios flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1200px] px-4 ${isVisible ? 'animate-fadeUp' : 'opacity-0'
         }`}
     >
       <h1 className='titulo-seccion font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[35px] relative inline-block mb-6'>
@@ -71,7 +71,7 @@ export const Servicios = () => {
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
       </h1>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-6'>
         {servicios.map((servicio, index) => (
           <ServicioCard
             key={index}
@@ -83,31 +83,28 @@ export const Servicios = () => {
       </div>
 
       {/* Sección de metodología de trabajo */}
-      <div className="contenedor-dato flex flex-col items-center justify-center bg-[#272727] shadow-md p-4 h-auto rounded border-t-4 border-[#b03a3a]">
-        <h3 className='font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] relative inline-block mb-2'>
-          Metodología de Trabajo
-          <span className="absolute left-1/2 bottom-[-6px] transform -translate-x-1/2 w-16 h-1 bg-[#b03a3a] rounded-full"></span>
-        </h3>
+      <div className="metodologia-trabajo bg-[#272727] rounded-lg p-6 md:p-8">
+        <h2 className="font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] mb-6 text-center">Metodología de Trabajo</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="etapa text-center p-4">
-            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-base md:text-lg ">1</div>
-            <h3 className="font-semibold text-[#dde1e9] text-base md:text-lg mb-2">Consulta</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-[#dde1e9]">Analizo las necesidades y objetivos</p>
+            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">1</div>
+            <h3 className="font-semibold text-[#dde1e9] mb-2">Consulta</h3>
+            <p className="text-sm text-[#dde1e9]">Analizamos tus necesidades y objetivos</p>
           </div>
           <div className="etapa text-center p-4">
-            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-base md:text-lg ">2</div>
-            <h3 className="font-semibold text-[#dde1e9] text-base md:text-lg mb-2">Propuesta</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-[#dde1e9]">Tengo la capacidad de diseñar una solución a la medida</p>
+            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">2</div>
+            <h3 className="font-semibold text-[#dde1e9] mb-2">Propuesta</h3>
+            <p className="text-sm text-[#dde1e9]">Diseñamos una solución a medida</p>
           </div>
           <div className="etapa text-center p-4">
-            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-base md:text-lg ">3</div>
-            <h3 className="font-semibold text-[#dde1e9] text-base md:text-lg mb-2">Desarrollo</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-[#dde1e9]">Implemento en mis proyectos tecnologías modernas</p>
+            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">3</div>
+            <h3 className="font-semibold text-[#dde1e9] mb-2">Desarrollo</h3>
+            <p className="text-sm text-[#dde1e9]">Implementamos con tecnologías modernas</p>
           </div>
           <div className="etapa text-center p-4">
-            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3 text-base md:text-lg ">4</div>
-            <h3 className="font-semibold text-[#dde1e9] text-base md:text-lg mb-2">Entrega</h3>
-            <p className="text-sm md:text-base font-light leading-relaxed text-[#dde1e9]">Cada proyecto asegura calidad y soporte continuo</p>
+            <div className="numero-etapa w-10 h-10 bg-[#b03a3a] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">4</div>
+            <h3 className="font-semibold text-[#dde1e9] mb-2">Entrega</h3>
+            <p className="text-sm text-[#dde1e9]">Aseguramos calidad y soporte continuo</p>
           </div>
         </div>
       </div>

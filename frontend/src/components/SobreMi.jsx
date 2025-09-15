@@ -13,10 +13,10 @@ export const SobreMi = () => {
 
   return (
     <div ref={sectionRef}
-      className={`contenedor-sobremi flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-5 mx-auto max-w-[1000px] ${isVisible ? 'animate-fadeUp' : 'opacity-0'
+      className={`contenedor-sobremi flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-6 mx-auto max-w-[1000px] ${isVisible ? 'animate-fadeUp' : 'opacity-0'
         }`}>
       {/* Título */}
-      <h1 className='titulo-seccion font-bold text-[18px] sm:text-[22px] md:text-[25px] lg:text-[30px] relative inline-block text-[#dde1e9]'>
+      <h1 className='titulo-seccion font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[35px] relative inline-block text-[#dde1e9] mb-6'>
         Sobre Mí
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
       </h1>
@@ -27,7 +27,7 @@ export const SobreMi = () => {
         {/* ¿Quién soy? */}
         <div className='contenedor-dato flex-1 flex flex-col bg-[#272727] border-t-4 border-[#b03a3a] shadow-md p-4 h-52 rounded'>
           <div className='titulo-dato'>
-            <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
+            <h3 className='font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-circle-user text-[14px] text-[#b03a3a]"></i>
               </span>
@@ -35,7 +35,7 @@ export const SobreMi = () => {
             </h3>
           </div>
           <div className='contenido-dato overflow-hidden'>
-            <span className='text-[#dde1e9] text-[9px] sm:text-[11px] md:text-[13px] lg:text-[14px] font-extralight block'>
+            <span className='text-[#dde1e9] text-xs md:text-sm font-light leading-relaxed block'>
               Soy un estudiante de 19 años de Ingeniería en Desarrollo de Software, cuento con un título
               de tecnólogo en la carrera, altamente motivado por superarme día a día con sólidos conocimientos
               en desarrollo y diseño web, así como en aplicaciones de escritorio.
@@ -46,7 +46,7 @@ export const SobreMi = () => {
         {/* Mi perfil */}
         <div className='contenedor-dato flex-1 flex flex-col bg-[#272727] border-t-4 border-[#b03a3a] shadow-md p-4 h-52 rounded'>
           <div className='titulo-dato'>
-            <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
+            <h3 className='font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-address-card text-[14px] text-[#b03a3a]"></i>
               </span>
@@ -54,7 +54,7 @@ export const SobreMi = () => {
             </h3>
           </div>
           <div className='contenido-dato overflow-hidden'>
-            <span className='text-[#dde1e9] text-[9px] sm:text-[11px] md:text-[13px] lg:text-[14px] font-extralight block'>
+            <span className='text-[#dde1e9] text-xs md:text-sm font-light leading-relaxed block'>
               Me caracterizo por aprender de forma autodidacta y adaptarme rápidamente a nuevos entornos
               y tecnologías emergentes. Cuento con nivel de inglés B2 y actualmente estudio ingeniería.
             </span>
@@ -64,7 +64,7 @@ export const SobreMi = () => {
         {/* Mi objetivo */}
         <div className='contenedor-dato flex-1 flex flex-col bg-[#272727] border-t-4 border-[#b03a3a] shadow-md p-4 h-52 rounded'>
           <div className='titulo-dato'>
-            <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] flex items-center gap-2'>
+            <h3 className='font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] flex items-center gap-2'>
               <span className="icon-bg bg-[#5a1f1f] rounded-full p-1.5 flex justify-center items-center">
                 <i className="fa-solid fa-rocket text-[14px] text-[#b03a3a]"></i>
               </span>
@@ -72,7 +72,7 @@ export const SobreMi = () => {
             </h3>
           </div>
           <div className='contenido-dato overflow-hidden'>
-            <span className='text-[#dde1e9] text-[9px] sm:text-[11px] md:text-[13px] lg:text-[14px] font-extralight block'>
+            <span className='text-[#dde1e9] text-xs md:text-sm font-light leading-relaxed block'>
               Mi objetivo es seguir aprendiendo nuevas tecnologías y aplicar mis conocimientos actuales
               para ganar experiencia tanto en Frontend como Backend. Me apasiona crear soluciones elegantes.
             </span>
@@ -82,7 +82,7 @@ export const SobreMi = () => {
 
       {/* Sección habilidades técnicas */}
       <div className='contenedor-dato flex flex-col items-center justify-center bg-[#272727] shadow-md p-4 h-auto rounded border-t-4 border-[#b03a3a]'>
-        <h3 className='font-semibold text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] pb-2 text-[#b03a3a] relative inline-block'>
+        <h3 className='font-semibold text-lg md:text-xl pb-2 text-[#b03a3a] relative inline-block'>
           Mis habilidades Técnicas
           <span className="absolute left-1/2 bottom-[-6px] transform -translate-x-1/2 w-16 h-1 bg-[#b03a3a] rounded-full"></span>
         </h3>
