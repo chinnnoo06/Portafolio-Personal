@@ -38,7 +38,7 @@ export const SobreMi = () => {
             <span className='text-[#dde1e9] text-xs md:text-sm font-light leading-relaxed block'>
               Soy un estudiante de 19 años de Ingeniería en Desarrollo de Software, cuento con un título
               de tecnólogo en la carrera, altamente motivado por superarme día a día con sólidos conocimientos
-              en desarrollo y diseño web, así como en aplicaciones de escritorio.
+              en desarrollo y diseño web, así como en aplicaciones de escritorio y móviles.
             </span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export const SobreMi = () => {
           <div className='contenido-dato overflow-hidden'>
             <span className='text-[#dde1e9] text-xs md:text-sm font-light leading-relaxed block'>
               Me caracterizo por aprender de forma autodidacta y adaptarme rápidamente a nuevos entornos
-              y tecnologías emergentes. Cuento con nivel de inglés B2 y actualmente estudio ingeniería.
+              y tecnologías emergentes. Cuento con nivel de inglés B1 y actualmente estudio ingeniería.
             </span>
           </div>
         </div>
