@@ -15,7 +15,6 @@ export const SobreMi = () => {
     <div ref={sectionRef}
       className={`contenedor-sobremi flex flex-col pt-12 pb-12 sm:pt-20 sm:pb-24 gap-6 mx-auto max-w-[1000px] ${isVisible ? 'animate-fadeUp' : 'opacity-0'
         }`}>
-      {/* Título */}
       <h1 className='titulo-seccion font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[35px] relative inline-block text-[#dde1e9] mb-6'>
         Sobre Mí
         <span className="absolute left-0 bottom-[-6px] w-16 h-1 bg-[#b03a3a] rounded-full"></span>
