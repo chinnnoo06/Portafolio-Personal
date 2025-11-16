@@ -6,8 +6,8 @@ const port = 5000;
 app.use(express.json());
 app.use(cors());
 
-const enviarCorreo = require('./models/enviarCorreo');
-const descargarCV = require('./models/descargarCV');
+const enviarCorreo = require('./controllers/enviarCorreo');
+const descargarCV = require('./controllers/descargarCV');
 
 app.get('/api/descargarcv', (req, res) => {
   descargarCV.descargarCV(res);

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import '../styles/sobremi.css'
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaBootstrap, FaNodeJs, FaPhp, FaJava, FaMicrosoft } from 'react-icons/fa';
-import { SiTailwindcss, SiAngular, SiExpress, SiC, SiCplusplus, SiMysql, SiFirebase, SiFigma, SiSqlite, SiMongodb } from 'react-icons/si';
+import { SiTailwindcss, SiAngular, SiExpress, SiC, SiCplusplus, SiMysql, SiFirebase, SiFigma, SiSqlite, SiMongodb, SiTypescript } from 'react-icons/si';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 export const SobreMi = () => {
@@ -102,6 +102,11 @@ export const SobreMi = () => {
           <div className='tecnologia flex flex-col items-center text-center'>
             <FaJsSquare className='text-2xl sm:text-3xl md:text-4xl text-[#f0db4f]' />
             <span className='text-xs text-[#dde1e9] mt-1'>JavaScript</span>
+          </div>
+
+           <div className='tecnologia flex flex-col items-center text-center'>
+            <SiTypescript className='text-2xl sm:text-3xl md:text-4xl text-[#3178c6]' />
+            <span className='text-xs text-[#dde1e9] mt-1'>TypeScript</span>
           </div>
 
           <div className='tecnologia flex flex-col items-center text-center'>
